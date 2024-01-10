@@ -1,0 +1,2 @@
+- This is a basic ExpressJS app of login, logout and change password by using express-passport.
+- It include how to deal with the express-flash message that can save it into session.

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passport Example</title>
+</head>
+<body>
+  <% if (user) { %>
+    <p>Hello, <%= user.username %>! 
+      <button><a href="/logout">Logout</a></button>
+      <button><a href="/change-password">Change password</a></button>
+    </p>
+  <% } else { %>
+    <p>Welcome! Please <a href="/login">login</a>.</p>
+  <% } %>
+
+  <% if (messages && messages.error && messages.error.length > 0) { %>
+    <div style="color: red;">
+        <% messages.error.forEach(error => { %>
+            <p><%= error %></p>
+        <% }); %>
+    </div>
+<% } %>
+
+  <% if (messages && messages.success && messages.success.length > 0) { %>
+    <div style="color: green;">
+        <% messages.success.forEach(success => { %>
+            <p><%= success %></p>
+        <% }); %>
+    </div>
+<% } %>
+</body>
+</html>
